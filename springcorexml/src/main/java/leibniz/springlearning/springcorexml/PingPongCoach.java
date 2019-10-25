@@ -12,6 +12,14 @@ public class PingPongCoach implements Coach {
 		this.dailyFortune = dailyFortune;
 	}
 	
+	public void myInit() {
+		System.out.println("Inside init method");
+	}
+	
+	public void myDestroy() {
+		System.out.println("Inside my destroy method");
+	}
+	
 	public void setDailyFortune(Fortune dailyFortune) {
 		this.dailyFortune = dailyFortune;
 	}

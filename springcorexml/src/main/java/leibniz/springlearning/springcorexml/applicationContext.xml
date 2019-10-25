@@ -20,7 +20,9 @@
 	</bean>
 	
 		<!-- Beans -->
-	<bean id="pingPongCoach" class="leibniz.springlearning.springcorexml.PingPongCoach">
+	<bean id="pingPongCoach" class="leibniz.springlearning.springcorexml.PingPongCoach"
+	init-method="myInit" 
+	destroy-method="myDestroy">
 		<property name="dailyFortune" ref="goodFortune"/>
 		<property name="paddleName" value="${paddleName}" />
 	</bean>
