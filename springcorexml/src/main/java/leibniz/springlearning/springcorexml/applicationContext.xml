@@ -22,7 +22,8 @@
 		<!-- Beans -->
 	<bean id="pingPongCoach" class="leibniz.springlearning.springcorexml.PingPongCoach"
 	init-method="myInit" 
-	destroy-method="myDestroy">
+	destroy-method="myDestroy"
+	scope="prototype">
 		<property name="dailyFortune" ref="goodFortune"/>
 		<property name="paddleName" value="${paddleName}" />
 	</bean>
