@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="file:data.properties"/>
+
+	<!-- Dependencies -->
+	<bean id="badFortune" class="leibniz.springlearning.springcorexml.BadFortune"></bean>
+	<bean id="goodFortune" class="leibniz.springlearning.springcorexml.GoodFortune"></bean>
+
+	
+	<!-- Beans -->
+	<bean id="tennisCoach" class="leibniz.springlearning.springcorexml.TennisCoach">
+		<constructor-arg ref="badFortune"/>
+	</bean>
+	
+		<!-- Beans -->
+	<bean id="pingPongCoach" class="leibniz.springlearning.springcorexml.PingPongCoach">
+		<property name="dailyFortune" ref="goodFortune"/>
+		<property name="paddleName" value="${paddleName}" />
+	</bean>
+
+
+
+</beans>
+
+
+
+
+
